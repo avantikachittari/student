@@ -5,43 +5,41 @@ hide: true
 ---
 
 <style>
-/* Rainbow gradient variables */
-:root {
-    --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+/* Ocean background */
+body {
+    background: linear-gradient(to bottom, #74ebd5, #ACB6E5);
+    background-attachment: fixed;
+    color: #222;
+    font-family: Arial, sans-serif;
 }
 
-/* Rainbow text */
-.rainbow-text {
-    background: var(--rainbow);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Rainbow buttons */
+/* Light pink buttons */
 .button {
-    background: var(--rainbow);
+    background-color: #f8c8dc;
     border: none;
     padding: 8px 14px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: bold;
-    color: white !important;
+    color: #4a4a4a !important;
     text-decoration: none;
     display: inline-block;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 .button:hover {
-    opacity: 0.85;
+    background-color: #f7b5d4;
+    transform: scale(1.05);
 }
 
-/* Table header rainbow */
+/* Table header styling */
 table th {
-    background: var(--rainbow);
+    background-color: #6ec6d9;
     color: white;
     padding: 8px;
 }
 
-/* Link hover rainbow underline */
+/* Pretty links */
 a {
-    color: inherit;
+    color: #3b7ca8;
     text-decoration: none;
     position: relative;
 }
@@ -52,7 +50,7 @@ a::after {
     height: 2px;
     left: 0;
     bottom: -2px;
-    background: var(--rainbow);
+    background-color: #3b7ca8;
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -61,7 +59,7 @@ a:hover::after {
 }
 </style>
 
-### <span class="rainbow-text">Me and Team</span>
+### Me and Team
 
 Hi! My name is Avantika Chittari.
 
@@ -73,9 +71,9 @@ Hi! My name is Avantika Chittari.
 | Scrummer     | Aadit    | [github.com/aaadit/student](https://github.com/aaadit/student)                 | downstream (fork)     | student   |
 
 
-## <span class="rainbow-text">Links to Learning</span>
+## Links to Learning
 
-### <span class="rainbow-text">Development Environment</span>
+### Development Environment
 
 > Coding starts with tools, explore these tools and procedures with a click.
 
@@ -86,14 +84,14 @@ Hi! My name is Avantika Chittari.
 
 <br><br>
 
-### <span class="rainbow-text">Class Progress</span>
+### Class Progress
 
 <a href="{{site.baseurl}}/snake" class="button">Snake Game</a>
 <a href="{{site.baseurl}}/turtle" class="button">Turtle</a>
 
 <br><br>
 
-### <span class="rainbow-text">Get in Touch</span>
+### Get in Touch
 
 > Feel free to reach out if you'd like to collaborate or learn more about our work.
 
