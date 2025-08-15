@@ -63,13 +63,12 @@ a:hover::after {
 
 Hi! My name is Avantika Chittari.
 
-| Role         | Name     | Repo Location                                                                 | Stream                | Repo Name |
-|--------------|----------|-------------------------------------------------------------------------------|-----------------------|-----------|
-| Scrum Master | John     | [github.com/jm1021/student](https://github.com/jm1021/student)                | upstream (OCS fork)   | student   |
-| Scrummer     | Torin    | [github.com/torin/student](https://github.com/torin/student)                   | downstream (fork)     | student   |
-| Scrummer     | Avantika | [github.com/avantika/student](https://github.com/avantika/student)             | downstream (fork)     | student   |
-| Scrummer     | Aadit    | [github.com/aaadit/student](https://github.com/aaadit/student)                 | downstream (fork)     | student   |
-
+| Role         | Name     | Repo Location                       | Stream                | Repo Name |
+|--------------|----------|-------------------------------------|-----------------------|-----------|
+| Scrum Master | John     | github.com/jm1021/student           | upstream (OCS fork)   | student   |
+| Scrummer     | Torin    | github.com/torin/student            | downstream (fork)     | student   |
+| Scrummer     | Avantika | github.com/avantika/student         | downstream (fork)     | student   |
+| Scrummer     | Aadit    | github.com/aaadit/student           | downstream (fork)     | student   |
 
 ## Links to Learning
 
