@@ -69,11 +69,14 @@ Flags are made using Wikipedia images
    // 2. Define a JavaScript object for our http source and our data rows for the Living in the World grid
    var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
    var living_in_the_world = [
-       {"flag": "0/01/Flag_of_California.svg", "greeting": "Hey", "description": "California - forever"},
-       {"flag": "b/b9/Flag_of_Oregon.svg", "greeting": "Hi", "description": "Oregon - 9 years"},
-       {"flag": "b/be/Flag_of_England.svg", "greeting": "Alright mate", "description": "England - 2 years"},
-       {"flag": "e/ef/Flag_of_Hawaii.svg", "greeting": "Aloha", "description": "Hawaii - 2 years"},
-   ];
+       // 2. Define a JavaScript object for our http source and our data rows for the Living in the World grid
+    var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
+    var living_in_the_world = [
+        {"flag": "0/01/Flag_of_California.svg", "greeting": "Hey", "description": "California- Lived since 2014"},
+        {"flag": "4/41/Flag_of_India.svg", "greeting": "Namaste/Vannakam", "description": "India- Born here in 2010 and lived until 2013"},
+        {"flag": "9/9d/Flag_of_Arizona.svg", "greeting": "Hello", "description": "Arizona- Lived in 2013 for 9 months"},
+        {"flag": "c/cf/Flag_of_Canada.svg", "greeting": "hey", "description": "Canada- My Cousins live here and I have visited a few times"},
+    ];
 
 
    // 3a. Consider how to update style count for size of container
