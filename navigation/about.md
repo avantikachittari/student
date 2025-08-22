@@ -69,14 +69,11 @@ Flags are made using Wikipedia images
    // 2. Define a JavaScript object for our http source and our data rows for the Living in the World grid
    var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
    var living_in_the_world = [
-       // 2. Define a JavaScript object for our http source and our data rows for the Living in the World grid
-    var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
-    var living_in_the_world = [
-        {"flag": "0/01/Flag_of_California.svg", "greeting": "Hey", "description": "California- Lived since 2014"},
-        {"flag": "4/41/Flag_of_India.svg", "greeting": "Namaste/Vannakam", "description": "India- Born here in 2010 and lived until 2013"},
-        {"flag": "9/9d/Flag_of_Arizona.svg", "greeting": "Hello", "description": "Arizona- Lived in 2013 for 9 months"},
-        {"flag": "c/cf/Flag_of_Canada.svg", "greeting": "hey", "description": "Canada- My Cousins live here and I have visited a few times"},
-    ];
+       {"flag": "0/01/Flag_of_California.svg", "greeting": "Hey", "description": "California - forever"},
+       {"flag": "b/b9/Flag_of_Oregon.svg", "greeting": "Hi", "description": "Oregon - 9 years"},
+       {"flag": "b/be/Flag_of_England.svg", "greeting": "Alright mate", "description": "England - 2 years"},
+       {"flag": "e/ef/Flag_of_Hawaii.svg", "greeting": "Aloha", "description": "Hawaii - 2 years"},
+   ];
 
 
    // 3a. Consider how to update style count for size of container
@@ -114,46 +111,6 @@ Flags are made using Wikipedia images
        container.appendChild(gridItem);
    }
 </script>
-<style>
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 15px;
-    }
-
-    .grid-item {
-        text-align: center;
-        padding: 12px;
-        border-radius: 12px;
-        background: linear-gradient(135deg, #f8c8dc, #c8d9f8); /* soft pink → blue */
-        color: #222;
-        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    }
-
-    .grid-item:hover {
-        transform: scale(1.07);
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-        background: linear-gradient(135deg, #ffd6e8, #a8c5ff); /* brighter hover */
-    }
-
-    .grid-item img {
-        width: 100%;
-        height: 100px;
-        object-fit: contain;
-        border-radius: 6px;
-        margin-bottom: 8px;
-    }
-
-    .grid-item p {
-        margin: 4px 0;
-    }
-
-    .grid-item p:first-of-type {
-        font-weight: bold; /* Greeting stands out */
-        color: #444;
-    }
-</style>
-
 
 
 ### About me
