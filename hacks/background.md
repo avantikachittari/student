@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: base 
 title: Background with Object
 description: Use JavaScript to have an in motion background.
 sprite: images/platformer/sprites/Butterfly.png
