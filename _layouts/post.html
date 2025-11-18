@@ -1,26 +1,40 @@
 ---
-layout: base 
+layout: base
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
     {%- if page.menu -%}
-      {% include {{page.menu}} html=content %}
+      {%- comment -%}
+        Dynamically include menu safely by mapping menu names to actual include files
+      {%- endcomment -%}
+
+      {% case page.menu %}
+        {% when "flask" %}
+          {% include nav/flask.html html=content %}
+        {% when "python" %}
+          {% include nav/python.html html=content %}
+        {% when "javascript" %}
+          {% include nav/javascript.html html=content %}
+        {% else %}
+          {# fallback: do nothing if menu not recognized #}
+      {% endcase %}
     {%- endif -%}
+
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+
     {% if page.categories.size > 0 %}
       Categories:
-      {% for category in  page.categories  %}
-        {%- assign prefix = category | slice: 0 -%}
-        <a class="category-tags-link" href="{{site.baseurl}}/search/#{{category|slugize}}">{{category}}</a>
+      {% for category in page.categories %}
+        <a class="category-tags-link" href="{{site.baseurl}}/search/#{{category | slugize}}">{{ category }}</a>
         {% unless forloop.last %}&nbsp;{% endunless %}
       {% endfor %}
     {% endif %}
+
     {% if page.breadcrumb %}
-      <!-- Locate Parent Path -->
+      <!-- Breadcrumb logic unchanged -->
       {% assign parts = page.permalink | split: '/' %}
       {% assign num_parts = parts.size | minus: 1 %}
-      <!-- Remove last part of path -->
       {% assign parent_parts = '' %}
       {% for i in (0..num_parts) %}
         {% unless forloop.last %}
@@ -40,6 +54,7 @@ layout: base
         {% endif %}
       {% endfor %}
     {% endif %}
+
     <p class="post-meta post-meta-title">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -52,43 +67,45 @@ layout: base
           {{ mdate | date: date_format }}
         </time>
       {%- endif -%}
+
       {%- if page.author -%}
         • {% for author in page.author %}
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-            {%- if forloop.last == false %}, {% endif -%}
+            <span class="p-author h-card" itemprop="name">{{ author }}</span>
+          </span>
+          {%- unless forloop.last %}, {% endunless -%}
         {% endfor %}
-      {%- endif %}
+      {%- endif -%}
+
       {%- if page.show_reading_time != false -%}
        • {% include reading_time.html -%}
-      {%- endif %}
-    </p>
-    <br>
-    {%- if page.description -%}
-      {%- if site.html_escape.description -%}
-        <p class="page-description">{{ page.description | escape }}</p>
-      {%- else -%}
-        <p class="page-description">{{ page.description }}</p>
       {%- endif -%}
+    </p>
+
+    {%- if page.description -%}
+      <p class="page-description">
+        {{ page.description | escape }}
+      </p>
     {%- endif -%}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    {%- if page.toc -%}
+    {% if page.toc %}
       {% include toc.html html=content %}
-    {%- endif -%}
-
-    {%- if page.submenu -%}
-      {%- include submenu.html -%}
-    {%- endif -%}
-
+    {% endif %}
+    {% if page.submenu %}
+      {% include submenu.html %}
+    {% endif %}
     {{ content }}
   </div>
-  {%- if page.comments -%}
-    {%- include utterances.html -%}
-  {%- endif -%}
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
+
+  {% if page.comments %}
+    {% include utterances.html %}
+  {% endif %}
+
+  {% if site.disqus.shortname %}
+    {% include disqus_comments.html %}
+  {% endif %}
+
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
